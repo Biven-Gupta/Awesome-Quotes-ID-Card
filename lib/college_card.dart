@@ -6,8 +6,15 @@ void main() {
   ));
 }
 
-class CollegeCard extends StatelessWidget {
+class CollegeCard extends StatefulWidget {
   const CollegeCard({Key? key}) : super(key: key);
+
+  @override
+  State<CollegeCard> createState() => _CollegeCardState();
+}
+
+class _CollegeCardState extends State<CollegeCard> {
+  int semester = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +25,20 @@ class CollegeCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 10.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (semester < 8) {
+            setState(() {
+              semester += 1;
+            });
+          }
+        },
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
+        backgroundColor: Colors.grey[600],
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -61,9 +82,9 @@ class CollegeCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            const Text(
-              '8',
-              style: TextStyle(
+            Text(
+              '$semester',
+              style: const TextStyle(
                 color: Colors.amber,
                 letterSpacing: 2.0,
                 fontSize: 40.0,
@@ -114,3 +135,18 @@ class CollegeCard extends StatelessWidget {
     );
   }
 }
+
+/*class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
+
+  @override
+  State<Test> createState() => _TestState();
+}
+
+class _TestState extends State<Test> {
+  int counter = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}*/
