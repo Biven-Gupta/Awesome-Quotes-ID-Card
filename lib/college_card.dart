@@ -32,6 +32,10 @@ class _CollegeCardState extends State<CollegeCard> {
             setState(() {
               semester += 1;
             });
+          } else {
+            setState(() {
+              semester = 0;
+            });
           }
         },
         child: const Icon(
@@ -45,10 +49,11 @@ class _CollegeCardState extends State<CollegeCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Center(
+            Center(
               child: CircleAvatar(
                 backgroundImage:
-                    AssetImage('assets/capturing-the-moment-tu.jpeg'),
+                    const AssetImage('assets/capturing-the-moment-tu.jpeg'),
+                backgroundColor: Colors.grey[900],
                 radius: 100.0,
               ),
             ),
@@ -70,6 +75,7 @@ class _CollegeCardState extends State<CollegeCard> {
                 color: Colors.amber,
                 letterSpacing: 2.0,
                 fontSize: 40.0,
+                fontWeight: FontWeight.bold,
                 fontFamily: 'ComforterBrush',
               ),
             ),
