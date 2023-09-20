@@ -15,18 +15,10 @@ class QuotesList extends StatefulWidget {
 
 class _QuotesListState extends State<QuotesList> {
   List<Quote> quotes = [
-    Quote(
-        text: "Love the life you live.Live the life you love.",
-        author: "~Bob Marley"),
-    Quote(
-        text: "It's the imperfections that make things beautiful",
-        author: "~Jenny Han"),
-    Quote(
-        text: 'Every villain is a hero in his own mind.',
-        author: "~Tom Hiddleston"),
-    Quote(
-        text: "Yelling doesn't get your point across, it only makes it louder.",
-        author: "~Grant Hill"),
+    Quote(text: "Love the life you live.Live the life you love.", author: "~Bob Marley"),
+    Quote(text: "It's the imperfections that make things beautiful", author: "~Jenny Han"),
+    Quote(text: 'Every villain is a hero in his own mind.', author: "~Tom Hiddleston"),
+    Quote(text: "Yelling doesn't get your point across, it only makes it louder.", author: "~Grant Hill"),
   ];
   @override
   Widget build(BuildContext context) {
